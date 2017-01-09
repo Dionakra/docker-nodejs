@@ -1,10 +1,8 @@
 # NodeJS in a box
 
-AlpineLinux-base Docker image with NodeJS 4.3.0+
+AlpineLinux-base Docker image with NodeJS 4.3.0+ and Java 8
 
-[![](https://badge.imagelayers.io/anapsix/nodejs:latest.svg)](https://imagelayers.io/?images=anapsix/nodejs:latest)
-
-[![Build Status](https://travis-ci.org/anapsix/docker-nodejs.svg)](https://travis-ci.org/anapsix/docker-nodejs)
+[![Build Status](https://travis-ci.org/Dionakra/docker-nodejs-java.svg)](https://travis-ci.org/Dionakra/docker-nodejs-java)
 
 ## Usage
 
@@ -16,7 +14,7 @@ It's assumed that you have working `./package.json` with resolvable dependencies
           --name my-node-project \
           -p 5080:5080 \
           -v $(pwd):/app \
-          anapsix/nodejs
+          dionakra/nodejs-java8
 
 > You should customize your _EXPOSE []_ according to `server.js`.  
 > You can also add _ENTRYPOINT_, override _CMD_ and add dependencies as needed.
@@ -24,7 +22,7 @@ It's assumed that you have working `./package.json` with resolvable dependencies
 - building from `onbuild` tag:
 
         # Dockerfile
-        FROM anapsix/nodejs:onbuild
+        FROM dionakra/nodejs-java8:onbuild
         EXPOSE 5080
 
 > To permanently install additional [AlpineLinux packages](http://pkgs.alpinelinux.org/packages), place one package name per line into `./deps.apk`.
