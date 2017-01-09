@@ -1,6 +1,6 @@
 FROM alpine:3.3
-MAINTAINER Anastas Dancha <anapsix@random.io>
-RUN apk upgrade --update && apk add nodejs
+MAINTAINER David de los Santos Boix <davsanboi@alum.us.es>
+RUN apk upgrade --update && apk add nodejs && apk add openjdk7-jre
 WORKDIR /app
 COPY *.sh /
 CMD ["/entrypoint.sh"]
